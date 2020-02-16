@@ -1,0 +1,151 @@
+body {
+  background-image: url("../res/22954.jpg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: auto 100%;
+}
+:root {
+  --gryffindor-color1: #7f0909;
+  --gryffindor-color2: #ffc500;
+  --hufflepuff-color1: #eee117;
+  --hufflepuff-color2: #000000;
+  --ravenclaw-color1: #000a90;
+  --ravenclaw-color2: #946b2d;
+  --slytherin-color1: #0d6217;
+  --slytherin-color2: #aaaaaa;
+  --gryffindor-font: "Eater", cursive;
+  --hufflepuff-font: "Bad Script", cursive;
+  --ravenclaw-font: "Alex Brush", cursive;
+  --slytherin-font: "Kristi", cursive;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: white;
+}
+.modalPicture {
+  margin-left: 500px;
+}
+.modalName {
+  font-size: 45px;
+  margin-left: 400px;
+  margin-top: 0px;
+}
+.modalHouse {
+  font-size: 30px;
+  margin-left: 480px;
+}
+.modalSomethingElse {
+  font-size: 20px;
+  margin-left: 530px;
+  opacity: 0;
+}
+/*Themes*/
+
+.GryffindorTheme > .modal-content {
+  background-color: var(--gryffindor-color2);
+  border: 5px solid var(--gryffindor-color1);
+  font-family: var(--gryffindor-font);
+  background-image: url(../res/128-Gryffindor_original.png);
+  background-position: top left;
+  background-position-x: 20px;
+  background-position-y: 20px;
+  background-repeat: no-repeat;
+  background-size: 25% auto;
+}
+
+.HufflepuffTheme > .modal-content {
+  background-color: var(--hufflepuff-color1);
+  border: 5px solid var(--hufflepuff-color2);
+  font-family: var(--hufflepuff-font);
+  background-image: url(../res/129-Hufflepuff_original.png);
+  background-position: top left;
+  background-position-x: 20px;
+  background-position-y: 20px;
+  background-repeat: no-repeat;
+  background-size: 25% auto;
+}
+.RavenclawTheme > .modal-content {
+  background-color: var(--ravenclaw-color2);
+  border: 5px solid var(--ravenclaw-color1);
+  font-family: var(--ravenclaw-font);
+  color: white;
+  background-image: url(../res/128-Ravenclaw_original.png);
+  background-position: top left;
+  background-position-x: 20px;
+  background-position-y: 20px;
+  background-repeat: no-repeat;
+  background-size: 25% auto;
+}
+.SlytherinTheme > .modal-content {
+  background-color: var(--slytherin-color2);
+  border: 5px solid var(--slytherin-color1);
+  font-family: var(--slytherin-font);
+  background-image: url(../res/130-Slytherin_original.png);
+  background-position: top left;
+  background-position-x: 20px;
+  background-position-y: 20px;
+  background-repeat: no-repeat;
+  background-size: 25% auto;
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 20%;
+  margin-left: 30px;
+  margin-top: 5px;
+  height: 0.5em;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  padding-left: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: blue;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+button {
+  margin-left: 200px;
+}
