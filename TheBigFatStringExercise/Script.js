@@ -59,6 +59,5 @@ UpperFirstLetter();
 // Option 2. If input is a full name: Find the first name
 
 function FindTheFirstName() {
-  //veche imame funkciq, koqto kazva dali e pyrvo ime
-  //ako e pyrvo ime
+  
 }
