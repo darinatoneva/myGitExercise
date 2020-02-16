@@ -9,7 +9,7 @@ You decide that it should at least contain:
 First name
 Last name
 Middle name (if any)
-Nick name (if any)
+Nick name 
 Image/photo filename
 House 
 You design the prototype for the object, and then build code to read each JSON-object, and create a new Student object, 
@@ -54,7 +54,7 @@ function getAllStudents() {
 }
 
 function loadNames(studentsNames) {
-  const missingPhoto = "res/missing-photo-icon-20.jpg";
+  const missingPhoto = "missing-photo-icon-20.jpg";
 
   studentsNames.forEach(function(student) {
     const studentList = document.querySelector(".studentList").content;
@@ -82,6 +82,7 @@ function loadNames(studentsNames) {
     };
   });
 }
+/*just a test
 const Student = {
   firstName: "Ben",
   lastName: "Some",
@@ -92,7 +93,7 @@ const Student = {
 };
 
 console.log(Student);
-const student = Object.create(Student);
+const student = Object.create(Student);*/
 
 function popup(el) {
   modal.querySelector(".modalName").textContent = el.getAttribute("name");
