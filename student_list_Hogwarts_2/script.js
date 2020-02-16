@@ -9,7 +9,7 @@ You decide that it should at least contain:
 First name
 Last name
 Middle name (if any)
-Nick name (if any)
+Nick name 
 Image/photo filename
 House 
 You design the prototype for the object, and then build code to read each JSON-object, and create a new Student object, 
