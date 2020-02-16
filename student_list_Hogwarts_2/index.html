@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Hogwards students</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Alex+Brush|Bad+Script|Eater|Kristi&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <template class="studentList">
+      <table>
+        <tr class="singleStudent">
+          <td>
+            <a class="name" house="" href="#"></a>
+            <button class="seeDetails">details</button>
+          </td>
+        </tr>
+      </table>
+    </template>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="modalPicture" src="" height="150" alt="student image" />
+        <p class="modalName"></p>
+        <p class="modalHouse"></p>
+        <p class="modalSomethingElse">Some text in the Modal..</p>
+
+        <label id="theme-changer">Choose theme</label>
+
+        <select name="theme" id="theme">
+          <option value="GryffindorTheme">Gryffindor theme</option>
+          <option value="HufflepuffTheme">Hufflepuff theme</option>
+          <option value="RavenclawTheme">Ravenclaw theme</option>
+          <option value="SlytherinTheme">Slytherin theme</option>
+        </select>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
