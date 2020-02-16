@@ -1,5 +1,5 @@
 body {
-  background-image: url("../res/22954.jpg");
+  background-image: url("../22954.jpg");
   background-repeat: no-repeat;
   background-position: left top;
   background-size: auto 100%;
@@ -54,7 +54,7 @@ body {
   background-color: var(--gryffindor-color2);
   border: 5px solid var(--gryffindor-color1);
   font-family: var(--gryffindor-font);
-  background-image: url(../res/128-Gryffindor_original.png);
+  background-image: url(../128-Gryffindor_original.png);
   background-position: top left;
   background-position-x: 20px;
   background-position-y: 20px;
@@ -66,7 +66,7 @@ body {
   background-color: var(--hufflepuff-color1);
   border: 5px solid var(--hufflepuff-color2);
   font-family: var(--hufflepuff-font);
-  background-image: url(../res/129-Hufflepuff_original.png);
+  background-image: url(../129-Hufflepuff_original.png);
   background-position: top left;
   background-position-x: 20px;
   background-position-y: 20px;
@@ -78,7 +78,7 @@ body {
   border: 5px solid var(--ravenclaw-color1);
   font-family: var(--ravenclaw-font);
   color: white;
-  background-image: url(../res/128-Ravenclaw_original.png);
+  background-image: url(../128-Ravenclaw_original.png);
   background-position: top left;
   background-position-x: 20px;
   background-position-y: 20px;
@@ -89,7 +89,7 @@ body {
   background-color: var(--slytherin-color2);
   border: 5px solid var(--slytherin-color1);
   font-family: var(--slytherin-font);
-  background-image: url(../res/130-Slytherin_original.png);
+  background-image: url(../130-Slytherin_original.png);
   background-position: top left;
   background-position-x: 20px;
   background-position-y: 20px;
