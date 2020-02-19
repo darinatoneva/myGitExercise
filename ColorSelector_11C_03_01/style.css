@@ -1,1 +1,8 @@
-
+.colorBox {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 10px;
+}
