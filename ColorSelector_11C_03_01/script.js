@@ -7,7 +7,7 @@ let hslInput = document.querySelector("#hsl");
 let chosenColor = colorInput.value;
 
 //showing the chosen color like HEX, RGB and HSL.
-//TO DO: Still showing 3 times HEX color,needs to be converted
+//TO DO: Still showing only HEX color, to be converted
 
 colorInput.addEventListener("input", () => {
   let chosenColor = colorInput.value;
@@ -18,7 +18,6 @@ colorInput.addEventListener("input", () => {
 });
 
 //converting HEX to RGB
-
 const hexToRgb = hex =>
   hex
     .replace(
