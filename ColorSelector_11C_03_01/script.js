@@ -1,21 +1,34 @@
 "use strict";
 
-let colorInput = document.querySelector("#color");
-let hexInput = document.querySelector("#hex");
-let rgbInput = document.querySelector("#rgb");
-let hslInput = document.querySelector("#hsl");
-let chosenColor = colorInput.value;
-
-//showing the chosen color like HEX, RGB and HSL.
-//TO DO: Still showing only HEX color, to be converted
-
-colorInput.addEventListener("input", () => {
+window.addEventListener("DOMContentLoaded", init);
+function init() {
+  let colorInput = document.querySelector("#color");
+  let hexInput = document.querySelector("#hex");
+  let rgbInput = document.querySelector("#rgb");
+  let hslInput = document.querySelector("#hsl");
   let chosenColor = colorInput.value;
-  hexInput.value = chosenColor;
-  rgbInput.value = chosenColor;
-  hslInput.value = chosenColor;
-  document.body.style.backgroundColor = chosenColor;
-});
+  let box1 = document.querySelector(".color1");
+
+  //showing the chosen color like HEX, RGB and HSL.
+  colorInput.addEventListener("input", () => {
+    let chosenHexColor = colorInput.value;
+    let chosenRGBColor = hex2rgb(chosenHexColor);
+    hexInput.value = chosenHexColor;
+    rgbInput.value = "RGB(" + chosenRGBColor.join(",") + ")";
+    hslInput.value =
+      "HSL(" +
+      convertRgbToHsl(chosenRGBColor[0], chosenRGBColor[1], chosenRGBColor[2]) +
+      ")";
+    document.body.style.backgroundColor = chosenHexColor;
+    box1.style.backgroundColor = chosenHexColor;
+  });
+}
+function hex2rgb(hex) {
+  var r = parseInt("0x" + hex.substring(1, 3));
+  var g = parseInt("0x" + hex.substring(3, 5));
+  var b = parseInt("0x" + hex.substring(5, 7));
+  return [r, g, b];
+}
 
 //converting HEX to RGB
 const hexToRgb = hex =>
@@ -27,11 +40,10 @@ const hexToRgb = hex =>
     .substring(1)
     .match(/.{2}/g)
     .map(x => parseInt(x, 16));
-console.log(hexToRgb("#000000")); // [0, 0, 0]
-console.log(hexToRgb("#03f")); // [0, 51, 255]
+//console.log(hexToRgb("#000000")); // [0, 0, 0]
+//console.log(hexToRgb("#03f")); // [0, 51, 255]
 
 //converting RGB to HSL
-/*
 function convertRgbToHsl(r, g, b) {
   r /= 255;
   g /= 255;
@@ -70,21 +82,3 @@ function convertRgbToHsl(r, g, b) {
   //console.log("hsl(%f,%f%,%f%)", h, s, l); // just for testing
   return [h, s, l];
 }
-console.log(convertRgbToHsl());
-*/
-
-/*
-the original code
-const hexToRgb = hex =>
-  hex
-    .replace(
-      /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
-      (m, r, g, b) => "#" + r + r + g + g + b + b
-    )
-    .substring(1)
-    .match(/.{2}/g)
-    .map(x => parseInt(x, 16));
-
-console.log(hexToRgb("#000000")); // [0, 0, 0]
-console.log(hexToRgb("#03f")); // [0, 51, 255]
-*/
