@@ -45,6 +45,12 @@ all names: first, last, middle, and nick - but only when they are not null or un
 
 "use strict";
 
+const StudentClass = {
+  fullname: "",
+  gender: "",
+  house: ""
+};
+
 window.addEventListener("DOMContentLoaded", getAllStudents);
 
 function getAllStudents() {
@@ -56,23 +62,28 @@ function getAllStudents() {
 function loadNames(studentsNames) {
   const missingPhoto = "missing-photo-icon-20.jpg";
 
-  studentsNames.forEach(function(student) {
+  studentsNames.forEach(function(jsonStudent) {
     const studentList = document.querySelector(".studentList").content;
     const studentCopy = studentList.cloneNode(true);
     var singleStudent = studentCopy.querySelector(".singleStudent");
     var link = singleStudent.querySelector(".name");
     var button = singleStudent.querySelector(".seeDetails");
 
-    link.innerHTML = student.fullname;
+    const studentObject = Object.create(StudentClass);
+    studentObject.fullname = jsonStudent.fullname;
+    studentObject.gender = jsonStudent.gender;
+    studentObject.house = jsonStudent.house;
 
-    button.setAttribute("name", student.fullname);
-    button.setAttribute("house", student.house);
-    button.setAttribute("somethingElse", student.somethingElse);
+    link.innerHTML = studentObject.fullname;
 
-    if (student.pic === undefined) {
+    button.setAttribute("name", studentObject.fullname);
+    button.setAttribute("house", studentObject.house);
+    button.setAttribute("somethingElse", studentObject.somethingElse);
+
+    if (studentObject.pic === undefined) {
       var studentPhoto = missingPhoto;
     } else {
-      var studentPhoto = student.pic;
+      var studentPhoto = studentObject.pic;
     }
 
     button.setAttribute("pictureFilename", studentPhoto);
