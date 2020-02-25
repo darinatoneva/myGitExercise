@@ -60,26 +60,29 @@ function getAllStudents() {
 }
 
 function loadNames(studentsNames) {
-  const missingPhoto = "missing-photo-icon-20.jpg";
+  const missingPhoto = "missing-photo-icon-20.jpg"; //default image for students without photos
 
   studentsNames.forEach(function(jsonStudent) {
-    const studentList = document.querySelector(".studentList").content;
-    const studentCopy = studentList.cloneNode(true);
-    var singleStudent = studentCopy.querySelector(".singleStudent");
-    var link = singleStudent.querySelector(".name");
-    var button = singleStudent.querySelector(".seeDetails");
+    const studentList = document.querySelector(".studentList").content; //the template class
+    const studentCopy = studentList.cloneNode(true); //copy of the template
+    let singleStudent = studentCopy.querySelector(".singleStudent"); //the student table row class
+    let link = singleStudent.querySelector(".name"); //student name <a> link
+    let button = singleStudent.querySelector(".seeDetails"); //the button
 
-    const studentObject = Object.create(StudentClass);
-    studentObject.fullname = jsonStudent.fullname;
-    studentObject.gender = jsonStudent.gender;
-    studentObject.house = jsonStudent.house;
+    //student object
+    const studentObject = Object.create(StudentClass); //creating studentObject from StudentClass prototype/template
+    studentObject.fullname = jsonStudent.fullname; //student full name (from JSON)
+    studentObject.gender = jsonStudent.gender; // student gender (from JSON)
+    studentObject.house = jsonStudent.house; //student house (from JSON)
 
-    link.innerHTML = studentObject.fullname;
+    link.innerHTML = studentObject.fullname; //shows student full name (from JSON) into <a> html tag with class"name"
 
+    //adding attributes to html "details button"
     button.setAttribute("name", studentObject.fullname);
     button.setAttribute("house", studentObject.house);
     button.setAttribute("somethingElse", studentObject.somethingElse);
 
+    //if a student has no image, use a default one
     if (studentObject.pic === undefined) {
       var studentPhoto = missingPhoto;
     } else {
@@ -87,25 +90,27 @@ function loadNames(studentsNames) {
     }
 
     button.setAttribute("pictureFilename", studentPhoto);
+    //append modified template ("studentList") back to HTML and makes it "pop up" on button click
+    //where:
+    //studentCopy (const studentCopy = studentList.cloneNode(true)
+    //let singleStudent = studentCopy.querySelector(".singleStudent"))
+
     document.body.appendChild(studentCopy);
     button.onclick = function() {
       popup(this);
     };
   });
 }
-/*just a test
-const Student = {
-  firstName: "Ben",
-  lastName: "Some",
-  middleName: "Ani",
-  nickName: "blah",
-  photoFileName: "",
-  house: ""
-};
 
-console.log(Student);
-const student = Object.create(Student);*/
+function splitStudentsFullNames(fullname) {
+  var firstName = studentObject.fullname
+    .split(" ")
+    .slice(0, -1)
+    .join(" ");
+    console.log()
+}
 
+//The modal code:
 function popup(el) {
   modal.querySelector(".modalName").textContent = el.getAttribute("name");
   modal.querySelector(".modalHouse").textContent = el.getAttribute("house");
@@ -140,7 +145,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 };
-
+// changing modal themes from the dropdown in thepop up window/modal
 document.querySelector("select#theme").addEventListener("change", selected);
 function selected() {
   modal.setAttribute("class", "");
