@@ -1,0 +1,445 @@
+@media only screen and (max-width: 1400px) {
+  .gridContainerMedium {
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    display: grid;
+    width: 100%;
+    grid-auto-rows: auto;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .headerMedium {
+    /*creating a subgrid*/
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 30px);
+    grid-column: 1 / span 6; /*according to the main grid*/
+    display: grid;
+    width: 85%;
+    height: 7rem;
+    background-color: var(--ravenclaw-color2);
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+  }
+  .logoMedium {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    position: absolute;
+    height: 6.5rem;
+    width: auto;
+    margin-left: 15px;
+    align-items: center;
+  }
+
+  .SchoolName {
+    width: 100%;
+    grid-column: 2 / span 4;
+    grid-row: 2;
+  }
+  .SchoolNameMedium h2 {
+    font-family: var(--school-font);
+    color: var(--yellow-color);
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+  #search {
+    width: 70%;
+    grid-column: 5;
+    grid-row: 2;
+    border: none;
+    font-size: 14px;
+  }
+
+  .line {
+    grid-column: 1 / span 12;
+    width: 60%;
+    height: auto;
+    margin: auto;
+    background-color: var(--yellow-color);
+    border-radius: 30px;
+    margin-top: 50px;
+    padding: 10px;
+  }
+  .line h3 {
+    font-family: var(--main-font);
+    color: var(--brown-text);
+    font-weight: bold;
+    text-align: center;
+  }
+  /*A container for the Filter buttons and Sort dropdown*/
+  .filterANDsort {
+    display: grid;
+    grid-column: 1 / span 6;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 40px);
+    grid-gap: 10px;
+    width: 85%;
+    margin-top: 50px;
+  }
+  .filter {
+    grid-column: 1;
+    grid-row: 1;
+    color: var(--yellow-color);
+    margin-bottom: 2rem;
+  }
+  .sort {
+    grid-column: 6;
+    grid-row: 1;
+    color: var(--yellow-color);
+    margin-bottom: 2rem;
+  }
+  /*Main formatting for all the buttons */
+  .filterButton {
+    grid-row: 2 / 3;
+    width: 8rem;
+    height: 2.5rem;
+    margin: 4px;
+    border-style: none;
+    font-size: 1.2rem;
+    color: white;
+    letter-spacing: 1px;
+  }
+  /*Single button formatting */
+  .btn1 {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: var(--ravenclaw-color2);
+    color: var(--yellow-color);
+  }
+  .btn2 {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: var(--gryffindor-color1);
+    color: var(--yellow-color);
+  }
+  .btn3 {
+    grid-column: 3;
+    grid-row: 2;
+    background-color: var(--hufflepuff-color2);
+    color: var(--yellow-color);
+  }
+  .btn4 {
+    grid-column: 2;
+    grid-row: 3;
+    background-color: var(--ravenclaw-color1);
+    color: var(--yellow-color);
+  }
+  .btn5 {
+    grid-column: 1;
+    grid-row: 3;
+    background-color: var(--slytherin-color1);
+    color: var(--yellow-color);
+  }
+  .btn6 {
+    grid-column: 4;
+    grid-row: 2;
+    background-color: var(--brown-text);
+    color: var(--yellow-color);
+  }
+  .btn7 {
+    grid-column: 4;
+    grid-row: 3;
+    background-color: var(--brown-text);
+    color: var(--yellow-color);
+  }
+
+  #sortSelect {
+    grid-column: 6;
+    grid-row: 2;
+    width: 9rem;
+    margin-top: 2px;
+    border-style: none;
+    font-size: 1.2rem;
+  }
+
+  #test {
+    grid-column: 1 / span 6;
+    width: 85%;
+    height: auto;
+    column-count: 3;
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+
+  .singleStudent {
+    width: auto;
+    background-color: var(--yellow-color);
+    padding: 7px;
+    border: 4px solid var(--brown-text);
+  }
+
+  a.name {
+    text-decoration: none;
+    color: var(--brown-text);
+    font-family: var(--main-font);
+    font-size: 1.2rem;
+  }
+
+  .seeDetails {
+    width: 4rem;
+    height: 1.5rem;
+    margin-left: 200px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: none;
+    background-color: var(--ravenclaw-color2);
+    color: var(--yellow-color);
+  }
+
+  /*Themes*/
+
+  .gryffindorTheme > .modal-content {
+    background-color: var(--gryffindor-color2);
+    border: 5px solid var(--gryffindor-color1);
+    font-family: var(--main-font);
+    background-image: url(./Gryffindor.png);
+    background-position: top left;
+    background-position-x: 20px;
+    background-position-y: 20px;
+    background-repeat: no-repeat;
+    background-size: 15% auto;
+  }
+
+  .hufflepuffTheme > .modal-content {
+    background-color: var(--hufflepuff-color2);
+    border: 5px solid var(--hufflepuff-color1);
+    font-family: var(--main-font);
+    background-image: url(./Hufflepuff.png);
+    background-position: top left;
+    background-position-x: 20px;
+    background-position-y: 20px;
+    background-repeat: no-repeat;
+    background-size: 15% auto;
+  }
+
+  .ravenclawTheme > .modal-content {
+    background-color: var(--ravenclaw-color2);
+    border: 5px solid var(--ravenclaw-color1);
+    font-family: var(--main-font);
+    background-image: url(./Ravenclaw.png);
+    background-position: top left;
+    background-position-x: 20px;
+    background-position-y: 20px;
+    background-repeat: no-repeat;
+    background-size: 15% auto;
+  }
+  .slytherinTheme > .modal-content {
+    background-color: var(--slytherin-color2);
+    border: 5px solid var(--slytherin-color1);
+    font-family: var(--main-font);
+    background-image: url(./Slytherin.png);
+    background-position: top left;
+    background-position-x: 20px;
+    background-position-y: 20px;
+    background-repeat: no-repeat;
+    background-size: 15% auto;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* It's hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: white;
+  }
+  .modalGridContainer {
+    width: 80%;
+    display: grid;
+  }
+  /* The Close Button */
+  .close {
+    grid-column: 3;
+    width: 30px;
+    height: 30px;
+    float: right;
+    color: black;
+    font-size: 34px;
+    font-weight: bolder;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* Modal Content */
+  .modal-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  .modalHouse {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    font-size: 2rem;
+    margin-left: 50px;
+    margin-top: 270px;
+    font-family: var(--main-font);
+  }
+  .modalRightPart {
+    grid-column: 2 / 2;
+    margin-top: 30px;
+    margin-right: 200px;
+    margin-bottom: 30px;
+    grid-row: 1;
+    width: 95%;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .modalName {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: var(--main-font);
+  }
+  hr {
+    width: 700px;
+    border: 1px solid var(--brown-text);
+    margin-bottom: 50px;
+  }
+
+  /*Checkboxes Prefect and Expelled in modal*/
+  /* The container */
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: darkgray;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .prefect {
+    background-color: green;
+  }
+  .container input:checked ~ .expelled {
+    background-color: red;
+  }
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  /*Blood-status*/
+  #blood-status {
+    font-size: 16px;
+    font-family: var(--main-font);
+  }
+
+  .container input:checked ~ .squad {
+    background-color: var(--hufflepuff-color2);
+    font-family: var(--main-font);
+  }
+  /*Responsibilities*/
+  .resp {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 700px;
+    height: auto;
+    background-color: white;
+    background: rgba(255, 255, 255, 0.2);
+    align-items: center;
+    justify-items: center;
+    margin-top: 30px;
+  }
+  .container input:checked ~ .responsibility {
+    background-color: var(--ravenclaw-color1);
+    font-family: var(--main-font);
+  }
+
+  .resp h2 {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: center;
+    font-family: var(--main-font);
+  }
+  label.container.one {
+    grid-column: 2;
+    grid-row: 3;
+    font-family: var(--main-font);
+  }
+  label.container.two {
+    grid-column: 3;
+    grid-row: 3;
+    font-family: var(--main-font);
+  }
+  label.container.three {
+    grid-column: 2;
+    grid-row: 4;
+    font-family: var(--main-font);
+  }
+  label.container.four {
+    grid-column: 3;
+    grid-row: 4;
+    font-family: var(--main-font);
+  }
+
+  .modalSomethingElse {
+    font-size: 20px;
+    margin-left: 530px;
+    font-family: var(--main-font);
+    opacity: 0;
+  }
+}
