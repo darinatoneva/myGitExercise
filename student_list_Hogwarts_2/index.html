@@ -3,46 +3,183 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Hogwards students</title>
+    <link rel="stylesheet" href="style_big-screen.css" />
+    <link rel="stylesheet" href="style_medium.css" />
+    <link rel="stylesheet" href="style_mobile.css" />
+    <title>Hogwarts students</title>
+
     <link
-      href="https://fonts.googleapis.com/css?family=Alex+Brush|Bad+Script|Eater|Kristi&display=swap"
+      href="https://fonts.googleapis.com/css?family=Amarante&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <template class="studentList">
-      <table>
-        <tr class="singleStudent">
-          <td>
-            <a class="name" house="" href="#"></a>
-            <button class="seeDetails">details</button>
-          </td>
-        </tr>
-      </table>
-    </template>
+    <div class="gridContainer gridContainerMedium gridContainerMobile">
+      <!--Header, Logo & Search-->
+      <header class="headerBig headerMedium headerMobile">
+        <!--Logo-->
+        <img
+          class="logo logoMedium logoMobile"
+          src="res/Hogwartscrest.png"
+          alt="Hogwart's crest"
+        />
+        <!--School name-->
+        <div class="SchoolName SchoolNameMedium SchoolNameMobile">
+          <h2>
+            Hogwarts School of Witchcraft and Wizardry
+          </h2>
+        </div>
+        <!--Search-->
+        <input id="search" type="text" placeholder="  Search.." />
+      </header>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <img class="modalPicture" src="" height="150" alt="student image" />
-        <p class="modalName"></p>
-        <p class="modalHouse"></p>
-        <p class="modalSomethingElse">Some text in the Modal..</p>
+      <div class="line">
+        <h3>STUDENTS LIST / 2020 year</h3>
+      </div>
 
-        <label id="theme-changer">Choose theme</label>
+      <!--Filter & Sort-->
+      <div class="filterANDsort">
+        <!--Filter buttons-->
 
-        <select name="theme" id="theme">
-          <option value="GryffindorTheme">Gryffindor theme</option>
-          <option value="HufflepuffTheme">Hufflepuff theme</option>
-          <option value="RavenclawTheme">Ravenclaw theme</option>
-          <option value="SlytherinTheme">Slytherin theme</option>
+        <h3 class="filter">Filter:</h3>
+        <button class="filterButton btn1">
+          All
+        </button>
+        <button class="filterButton btn2">
+          Gryffindor
+        </button>
+        <button class="filterButton btn3">
+          Hufflepuff
+        </button>
+        <button class="filterButton btn4">
+          Ravenclaw
+        </button>
+        <button class="filterButton btn5">
+          Slytherin
+        </button>
+        <button class="filterButton btn6">
+          Expelled
+        </button>
+        <button class="filterButton btn7">
+          Prefects
+        </button>
+
+        <!--Sort-->
+        <h3 class="sort">Sort by:</h3>
+        <select id="sortSelect">
+          <!--<option value="">Sort by</option>-->
+          <option value="firstname">First name</option>
+          <option value="lastname">Last name</option>
+          <option value="house">House name</option>
         </select>
       </div>
-    </div>
 
+      <!--Template-->
+      <template class="studentList">
+        <div class="singleStudent">
+          <a class="name" house="" href="#"></a>
+          <button class="seeDetails">details</button>
+        </div>
+      </template>
+      <!--Copy of the template from Javascript-->
+      <div id="test"></div>
+
+      <!-- The Modal -->
+      <div class="modalGridContainer">
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <p class="modalHouse"></p>
+
+            <div class="modalRightPart">
+              <img
+                class="modalPicture"
+                src="images/"
+                height="150"
+                alt="student image"
+              />
+
+              <p class="modalName"></p>
+              <hr />
+
+              <!--Checkboxes Prefect and Expelled-->
+              <label class="container"
+                >Prefect
+                <input type="checkbox" class="prefect" />
+                <span class="checkmark prefect"></span>
+              </label>
+              <label class="container"
+                >Expelled
+                <input type="checkbox" class="expelled" />
+                <span class="checkmark expelled"></span>
+              </label>
+
+              <!--Blood-status dropdown-->
+              <label class="container"
+                >Blood-status
+                <select name="blood-status" id="blood-status">
+                  <option value="pure-blood">pure-blood</option>
+                  <option value="half-blood">half-blood</option>
+                  <option value="half-muggle">half-muggle</option>
+                  <option value="muggle">muggle</option>
+                </select>
+              </label>
+
+              <!--Inquisitorial squad member-->
+              <label class="container"
+                >Inquisitorial squad member
+                <input type="checkbox" checked="checked" />
+                <span class="checkmark squad"></span>
+              </label>
+
+              <!--Responsibilities-->
+              <div class="resp">
+                <h2>Responsibilities:</h2>
+                <label class="container one"
+                  >Responsibility 1
+                  <input type="checkbox" checked="checked" />
+                  <span class="checkmark responsibility"></span>
+                </label>
+
+                <label class="container two"
+                  >Responsibility 2
+                  <input type="checkbox" checked="checked" />
+                  <span class="checkmark responsibility"></span>
+                </label>
+
+                <label class="container three"
+                  >Responsibility 3
+                  <input type="checkbox" checked="checked" />
+                  <span class="checkmark responsibility"></span>
+                </label>
+
+                <label class="container four"
+                  >Responsibility 4
+                  <input type="checkbox" checked="checked" />
+                  <span class="checkmark responsibility"></span>
+                </label>
+              </div>
+
+              <p class="modalSomethingElse">Some text in the Modal..</p>
+            </div>
+            <!--<label id="theme-changer">Choose theme</label>
+
+          <select name="theme" id="theme">
+            <option value="GryffindorTheme">Gryffindor theme</option>
+            <option value="HufflepuffTheme">Hufflepuff theme</option>
+            <option value="RavenclawTheme">Ravenclaw theme</option>
+            <option value="SlytherinTheme">Slytherin theme</option>
+          </select>-->
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
